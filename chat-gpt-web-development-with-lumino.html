@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="light">
+<head>
+  <meta charset="utf-8"/>
+  <title>Chat GPT: Web Development with Lumino</title>
+  <meta name="generator" content="chatGPT Saving Bookmark"/>
+<style>
+html.dark {
+  background-color: rgb(32,33,35);
+  color: rgb(236,236,241);
+}
+html.light {
+  background-color: white;
+  color: rgb(52,53,65);
+}
+.dark body > header {
+    border-bottom: 1px solid rgba(32,33,35,.5);
+}
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 28px;
+  margin: 0;
+}
+body > .w-full {
+  padding: 30px;
+}
+.flex {
+  display: flex;
+  max-width: 100%;
+}
+p:first-child {
+  margin-top: 0;
+}
+.m-auto {
+  margin: auto;
+}
+.text-base {
+  max-width: 50rem;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+/* model name */
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-center {
+  align-items: center;
+}
+.w-4 {
+  width: 1rem;
+}
+.h-4 {
+  height: 1rem;
+}
+/* prompt */
+.dark body > .w-full:nth-of-type(2n+1) {
+  background: rgb(52,53,65);
+}
+/* response */
+.dark body > .w-full:nth-of-type(2n+2) {
+  background: rgb(68,70,84);
+}
+.light body > .w-full:nth-of-type(2n+2) {
+  background: rgb(247,247,248);
+}
+.light body > .w-full {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+a, a:visited {
+  color: #7792cd;
+}
+pre {
+  margin: 0 0 1em 0;
+  display: block;
+}
+pre code.hljs {
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+.flex-col {
+  flex-direction: column;
+}
+*, :after, :before {
+  border: 0 solid #d9d9e3;
+  box-sizing: border-box;
+}
+table {
+  border-collapse: collapse;
+  border-color: inherit;
+  text-indent: 0;
+}
+.markdown table {
+  --tw-border-spacing-x: 0px;
+  --tw-border-spacing-y: 0px;
+  border-collapse: separate;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  width: 100%
+}
+.markdown th {
+  background-color: rgba(236,236,241,.2);
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  padding: .25rem .75rem
+}
+.markdown th:first-child {
+  border-top-left-radius: .375rem
+}
+.markdown th:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: .375rem
+}
+.markdown td {
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  padding: .25rem .75rem
+}
+.markdown td:last-child {
+  border-right-width: 1px
+}
+.markdown tbody tr:last-child td:first-child {
+  border-bottom-left-radius: .375rem
+}
+.markdown tbody tr:last-child td:last-child {
+  border-bottom-right-radius: .375rem
+}
+/* chatGPT code color theme */
+code.hljs,code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#fff;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;overflow:auto}:not(pre)>code.hljs,:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.hljs-comment{color:hsla(0,0%,100%,.5)}.hljs-meta{color:hsla(0,0%,100%,.6)}.hljs-built_in,.hljs-class .hljs-title{color:#e9950c}.hljs-doctag,.hljs-formula,.hljs-keyword,.hljs-literal{color:#2e95d3}.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#00a67d}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#df3079}.hljs-bullet,.hljs-link,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#f22c3d}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#a9aec1}.token.punctuation{color:#fefefe}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#ffa07a}.token.boolean,.token.number{color:#00e0e0}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#abe338}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#00e0e0}.token.atrule,.token.attr-value,.token.function{color:gold}.token.keyword{color:#00e0e0}.token.important,.token.regex{color:gold}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}@media screen and (-ms-high-contrast:active){code[class*=language-],pre[class*=language-]{background:window;color:windowText}:not(pre)>code[class*=language-],pre[class*=language-]{background:window}.token.important{background:highlight;color:window;font-weight:400}.token.atrule,.token.attr-value,.token.function,.token.keyword,.token.operator,.token.selector{font-weight:700}.token.attr-value,.token.comment,.token.doctype,.token.function,.token.keyword,.token.operator,.token.property,.token.string{color:highlight}.token.attr-value,.token.url{font-weight:400}}
+/* avatars */
+.w-6 {
+  width: 1.5rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.w-\[30px\] {
+  width: 30px;
+  min-width: 30px;
+}
+.h-\[30px\] {
+  height: 30px;
+}
+.empty\:hidden img {
+  max-width: 100%;
+}
+.items-end {
+  margin: 0 1em 0 -1em;
+}
+.w-full .items-end + div {
+  width: calc(100% - 115px);
+}
+.w-full {
+  width: 100%;
+}
+/* code intepreter */
+body > header {
+  transform: none !important;
+}
+.bg-gray-100 {
+  background-color: rgba(236,236,241,1);
+}
+.text-gray-900 {
+  color: rgba(32,33,35,1);
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.items-start {
+  align-items: flex-start;
+}
+.flex-col {
+  flex-direction: column;
+}
+.text-white {
+  color: rgba(255,255,255,1);
+}
+.bg-gray-500 {
+  background-color: rgba(142,142,160,1);
+}
+.rounded-l-md {
+  border-bottom-left-radius: 0.375rem;
+  border-top-left-radius: 0.375rem;
+}
+.font-medium {
+  font-weight: 500;
+}
+.py-2 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.bg-gray-50 {
+  background-color: rgba(247,247,248,1);
+}
+.rounded-r-md {
+  border-bottom-right-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+.prose {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+/* user avatar don't have p tag with margin */
+body > .w-full:nth-of-type(2n+1) .items-end {
+  margin-top: 0;
+}
+/* style of the code snippets */
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.py-2 {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+.bg-black {
+  background-color: rgb(0,0,0);
+}
+.text-gray-200 {
+  color: rgb(217,217,227);
+}
+.bg-gray-800 {
+  background-color: rgba(52,53,65);
+}
+.rounded-t-md {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+code.hljs, code[class*=language-], pre[class*=language-] {
+  word-wrap: normal;
+  background: none;
+  color: #fff;
+  -webkit-hyphens: none;
+  hyphens: none;
+  line-height: 1.5;
+  tab-size: 4;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+}
+.prose :where(code):not(:where([class~=not-prose] *)) {
+  color: var(--tw-prose-code);
+  font-size: .875em;
+  font-weight: 600;
+}
+.prose :where(pre):not(:where([class~=not-prose] *)) {
+  background-color: transparent;
+  border-radius: 0.375rem;
+  color: currentColor;
+  font-size: .875em;
+  font-weight: 400;
+  line-height: 1.7142857;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0;
+}
+.prose :where(pre code):not(:where([class~=not-prose] *)) {
+  background-color: transparent;
+  border-radius: 0;
+  border-width: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+}
+.\!whitespace-pre {
+  white-space: pre!important;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.toggle {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  line-height: 1.2em;
+}
+#toggle {
+  display: none;
+}
+#toggle + label::before {
+  content: "☀️";
+  background: black;
+  display: block;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  padding: 4px 3px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+#toggle:checked + label::before {
+  content: "🌙";
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"/>
+</head>
+<body><header class="sticky top-0 z-10 w-full bg-white dark:bg-gray-800" style="transform: translateY(-100%); box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 24px 0px;" data-projection-id="2"><span class="relative z-20 flex min-h-[60px] flex-wrap items-center justify-between gap-3 border-b border-black/10 bg-white p-2 text-gray-500 dark:border-gray-900/50 dark:bg-gray-800 dark:text-gray-300"><div class="hidden flex-shrink flex-row sm:flex"></div><div class="flex flex-1 flex-grow items-center gap-1 px-2 py-1 text-gray-600 dark:text-gray-200 sm:justify-center sm:p-0"><span>Default (GPT-3.5)</span></div><div class="flex flex-shrink flex-row"><span></span></div></span></header><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 gizmo:bg-transparent dark:bg-gray-800 gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-2"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div class="relative flex"><img alt="user avatar" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" class="rounded-sm"></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)]"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="user" data-message-id="aaa2c5df-fa0d-437a-9870-cbd4a6a48914" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="">Can you teach me how to write we applications with the Lumino library?</div></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 bg-gray-50 gizmo:bg-transparent dark:bg-[#444654] gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-3"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div style="background-color: rgb(25, 195, 125); width: 36px; height: 36px;" class="relative p-1 rounded-sm h-9 w-9 text-white flex items-center justify-center"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md" role="img"><text x="-9999" y="-9999">ChatGPT</text><path d="M37.5324 16.8707C37.9808 15.5241 38.1363 14.0974 37.9886 12.6859C37.8409 11.2744 37.3934 9.91076 36.676 8.68622C35.6126 6.83404 33.9882 5.3676 32.0373 4.4985C30.0864 3.62941 27.9098 3.40259 25.8215 3.85078C24.8796 2.7893 23.7219 1.94125 22.4257 1.36341C21.1295 0.785575 19.7249 0.491269 18.3058 0.500197C16.1708 0.495044 14.0893 1.16803 12.3614 2.42214C10.6335 3.67624 9.34853 5.44666 8.6917 7.47815C7.30085 7.76286 5.98686 8.3414 4.8377 9.17505C3.68854 10.0087 2.73073 11.0782 2.02839 12.312C0.956464 14.1591 0.498905 16.2988 0.721698 18.4228C0.944492 20.5467 1.83612 22.5449 3.268 24.1293C2.81966 25.4759 2.66413 26.9026 2.81182 28.3141C2.95951 29.7256 3.40701 31.0892 4.12437 32.3138C5.18791 34.1659 6.8123 35.6322 8.76321 36.5013C10.7141 37.3704 12.8907 37.5973 14.9789 37.1492C15.9208 38.2107 17.0786 39.0587 18.3747 39.6366C19.6709 40.2144 21.0755 40.5087 22.4946 40.4998C24.6307 40.5054 26.7133 39.8321 28.4418 38.5772C30.1704 37.3223 31.4556 35.5506 32.1119 33.5179C33.5027 33.2332 34.8167 32.6547 35.9659 31.821C37.115 30.9874 38.0728 29.9178 38.7752 28.684C39.8458 26.8371 40.3023 24.6979 40.0789 22.5748C39.8556 20.4517 38.9639 18.4544 37.5324 16.8707ZM22.4978 37.8849C20.7443 37.8874 19.0459 37.2733 17.6994 36.1501C17.7601 36.117 17.8666 36.0586 17.936 36.0161L25.9004 31.4156C26.1003 31.3019 26.2663 31.137 26.3813 30.9378C26.4964 30.7386 26.5563 30.5124 26.5549 30.2825V19.0542L29.9213 20.998C29.9389 21.0068 29.9541 21.0198 29.9656 21.0359C29.977 21.052 29.9842 21.0707 29.9867 21.0902V30.3889C29.9842 32.375 29.1946 34.2791 27.7909 35.6841C26.3872 37.0892 24.4838 37.8806 22.4978 37.8849ZM6.39227 31.0064C5.51397 29.4888 5.19742 27.7107 5.49804 25.9832C5.55718 26.0187 5.66048 26.0818 5.73461 26.1244L13.699 30.7248C13.8975 30.8408 14.1233 30.902 14.3532 30.902C14.583 30.902 14.8088 30.8408 15.0073 30.7248L24.731 25.1103V28.9979C24.7321 29.0177 24.7283 29.0376 24.7199 29.0556C24.7115 29.0736 24.6988 29.0893 24.6829 29.1012L16.6317 33.7497C14.9096 34.7416 12.8643 35.0097 10.9447 34.4954C9.02506 33.9811 7.38785 32.7263 6.39227 31.0064ZM4.29707 13.6194C5.17156 12.0998 6.55279 10.9364 8.19885 10.3327C8.19885 10.4013 8.19491 10.5228 8.19491 10.6071V19.808C8.19351 20.0378 8.25334 20.2638 8.36823 20.4629C8.48312 20.6619 8.64893 20.8267 8.84863 20.9404L18.5723 26.5542L15.206 28.4979C15.1894 28.5089 15.1703 28.5155 15.1505 28.5173C15.1307 28.5191 15.1107 28.516 15.0924 28.5082L7.04046 23.8557C5.32135 22.8601 4.06716 21.2235 3.55289 19.3046C3.03862 17.3858 3.30624 15.3413 4.29707 13.6194ZM31.955 20.0556L22.2312 14.4411L25.5976 12.4981C25.6142 12.4872 25.6333 12.4805 25.6531 12.4787C25.6729 12.4769 25.6928 12.4801 25.7111 12.4879L33.7631 17.1364C34.9967 17.849 36.0017 18.8982 36.6606 20.1613C37.3194 21.4244 37.6047 22.849 37.4832 24.2684C37.3617 25.6878 36.8382 27.0432 35.9743 28.1759C35.1103 29.3086 33.9415 30.1717 32.6047 30.6641C32.6047 30.5947 32.6047 30.4733 32.6047 30.3889V21.188C32.6066 20.9586 32.5474 20.7328 32.4332 20.5338C32.319 20.3348 32.154 20.1698 31.955 20.0556ZM35.3055 15.0128C35.2464 14.9765 35.1431 14.9142 35.069 14.8717L27.1045 10.2712C26.906 10.1554 26.6803 10.0943 26.4504 10.0943C26.2206 10.0943 25.9948 10.1554 25.7963 10.2712L16.0726 15.8858V11.9982C16.0715 11.9783 16.0753 11.9585 16.0837 11.9405C16.0921 11.9225 16.1048 11.9068 16.1207 11.8949L24.1719 7.25025C25.4053 6.53903 26.8158 6.19376 28.2383 6.25482C29.6608 6.31589 31.0364 6.78077 32.2044 7.59508C33.3723 8.40939 34.2842 9.53945 34.8334 10.8531C35.3826 12.1667 35.5464 13.6095 35.3055 15.0128ZM14.2424 21.9419L10.8752 19.9981C10.8576 19.9893 10.8423 19.9763 10.8309 19.9602C10.8195 19.9441 10.8122 19.9254 10.8098 19.9058V10.6071C10.8107 9.18295 11.2173 7.78848 11.9819 6.58696C12.7466 5.38544 13.8377 4.42659 15.1275 3.82264C16.4173 3.21869 17.8524 2.99464 19.2649 3.1767C20.6775 3.35876 22.0089 3.93941 23.1034 4.85067C23.0427 4.88379 22.937 4.94215 22.8668 4.98473L14.9024 9.58517C14.7025 9.69878 14.5366 9.86356 14.4215 10.0626C14.3065 10.2616 14.2466 10.4877 14.2479 10.7175L14.2424 21.9419ZM16.071 17.9991L20.4018 15.4978L24.7325 17.9975V22.9985L20.4018 25.4983L16.071 22.9985V17.9991Z" fill="currentColor"></path></svg></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)] agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="assistant" data-message-id="3fdeb5d4-b017-4699-9961-eb15976d53b9" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>I'm not aware of a library called "Lumino" for web development as of my last knowledge update in January 2022. It's possible that it's a relatively new or niche library that has been developed since then. If that's the case, I can't provide specific details about it.</p><p>However, I can provide you with a general outline of how to get started with web development using common technologies and libraries like HTML, CSS, and JavaScript. If you can provide more information about "Lumino" or if it's a JavaScript library or framework, I can try to offer more specific guidance based on the principles of web development.</p><p>Here's a general outline of how to create a simple web application:</p><ol><li><strong>HTML (HyperText Markup Language)</strong>:<ul><li>Start by creating the structure of your web page using HTML. HTML is used to define the content and structure of your web page.</li><li>Create an HTML file (e.g., <code>index.html</code>) and define elements like headings, paragraphs, links, forms, and more.</li></ul></li></ol><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>html</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My Web App<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome to My Web App<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a simple web application.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></div></div></pre><ol start="2"><li><strong>CSS (Cascading Style Sheets)</strong>:<ul><li>Use CSS to style your web page, making it visually appealing.</li><li>Create a CSS file (e.g., <code>styles.css</code>) and define styles for your HTML elements.</li></ul></li></ol><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>css</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-css"><span class="hljs-comment">/* styles.css */</span>
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f0f0</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+}
+
+<span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+}
+</code></div></div></pre><ol start="3"><li><strong>JavaScript</strong> (if required):<ul><li>If you need interactivity, you can use JavaScript to add functionality to your web application.</li><li>Create a JavaScript file (e.g., <code>script.js</code>) and write code to respond to user actions.</li></ul></li></ol><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-comment">// script.js</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"DOMContentLoaded"</span>, <span class="hljs-keyword">function</span>() {
+    <span class="hljs-comment">// Your JavaScript code here</span>
+});
+</code></div></div></pre><ol start="4"><li><p><strong>Serve Your Application</strong>:</p><ul><li>To view your web application locally, you can use a simple web server or an extension for your code editor. For example, you can use the "Live Server" extension in Visual Studio Code.</li></ul></li><li><p><strong>Testing and Debugging</strong>:</p><ul><li>Test your web application in different web browsers to ensure compatibility.</li><li>Use browser developer tools to debug any issues with your code.</li></ul></li><li><p><strong>Deployment</strong>:</p><ul><li>When you're ready to share your web application, you'll need to deploy it to a web server. There are many hosting options available, including platforms like GitHub Pages, Netlify, or traditional web hosting providers.</li></ul></li></ol><p>If "Lumino" is a specific library or framework that you'd like to use for your web development project, please provide more information about it, and I'll do my best to provide guidance based on that.</p></div></div></div><div class="flex justify-between empty:hidden gizmo:justify-start gizmo:gap-3 lg:block gizmo:lg:flex"><div class="text-gray-400 flex self-end lg:self-center justify-center gizmo:lg:justify-start mt-2 gizmo:mt-0 visible lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 gap-2 md:gap-3"></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 gizmo:bg-transparent dark:bg-gray-800 gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-4"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div class="relative flex"><img alt="user avatar" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" class="rounded-sm"></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)]"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="user" data-message-id="aaa21fe7-c663-4406-9afa-29a8b197a730" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="">Lumino is a Javascript library formerly known as phosphorjs</div></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 bg-gray-50 gizmo:bg-transparent dark:bg-[#444654] gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-5"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div style="background-color: rgb(25, 195, 125); width: 36px; height: 36px;" class="relative p-1 rounded-sm h-9 w-9 text-white flex items-center justify-center"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md" role="img"><text x="-9999" y="-9999">ChatGPT</text><path d="M37.5324 16.8707C37.9808 15.5241 38.1363 14.0974 37.9886 12.6859C37.8409 11.2744 37.3934 9.91076 36.676 8.68622C35.6126 6.83404 33.9882 5.3676 32.0373 4.4985C30.0864 3.62941 27.9098 3.40259 25.8215 3.85078C24.8796 2.7893 23.7219 1.94125 22.4257 1.36341C21.1295 0.785575 19.7249 0.491269 18.3058 0.500197C16.1708 0.495044 14.0893 1.16803 12.3614 2.42214C10.6335 3.67624 9.34853 5.44666 8.6917 7.47815C7.30085 7.76286 5.98686 8.3414 4.8377 9.17505C3.68854 10.0087 2.73073 11.0782 2.02839 12.312C0.956464 14.1591 0.498905 16.2988 0.721698 18.4228C0.944492 20.5467 1.83612 22.5449 3.268 24.1293C2.81966 25.4759 2.66413 26.9026 2.81182 28.3141C2.95951 29.7256 3.40701 31.0892 4.12437 32.3138C5.18791 34.1659 6.8123 35.6322 8.76321 36.5013C10.7141 37.3704 12.8907 37.5973 14.9789 37.1492C15.9208 38.2107 17.0786 39.0587 18.3747 39.6366C19.6709 40.2144 21.0755 40.5087 22.4946 40.4998C24.6307 40.5054 26.7133 39.8321 28.4418 38.5772C30.1704 37.3223 31.4556 35.5506 32.1119 33.5179C33.5027 33.2332 34.8167 32.6547 35.9659 31.821C37.115 30.9874 38.0728 29.9178 38.7752 28.684C39.8458 26.8371 40.3023 24.6979 40.0789 22.5748C39.8556 20.4517 38.9639 18.4544 37.5324 16.8707ZM22.4978 37.8849C20.7443 37.8874 19.0459 37.2733 17.6994 36.1501C17.7601 36.117 17.8666 36.0586 17.936 36.0161L25.9004 31.4156C26.1003 31.3019 26.2663 31.137 26.3813 30.9378C26.4964 30.7386 26.5563 30.5124 26.5549 30.2825V19.0542L29.9213 20.998C29.9389 21.0068 29.9541 21.0198 29.9656 21.0359C29.977 21.052 29.9842 21.0707 29.9867 21.0902V30.3889C29.9842 32.375 29.1946 34.2791 27.7909 35.6841C26.3872 37.0892 24.4838 37.8806 22.4978 37.8849ZM6.39227 31.0064C5.51397 29.4888 5.19742 27.7107 5.49804 25.9832C5.55718 26.0187 5.66048 26.0818 5.73461 26.1244L13.699 30.7248C13.8975 30.8408 14.1233 30.902 14.3532 30.902C14.583 30.902 14.8088 30.8408 15.0073 30.7248L24.731 25.1103V28.9979C24.7321 29.0177 24.7283 29.0376 24.7199 29.0556C24.7115 29.0736 24.6988 29.0893 24.6829 29.1012L16.6317 33.7497C14.9096 34.7416 12.8643 35.0097 10.9447 34.4954C9.02506 33.9811 7.38785 32.7263 6.39227 31.0064ZM4.29707 13.6194C5.17156 12.0998 6.55279 10.9364 8.19885 10.3327C8.19885 10.4013 8.19491 10.5228 8.19491 10.6071V19.808C8.19351 20.0378 8.25334 20.2638 8.36823 20.4629C8.48312 20.6619 8.64893 20.8267 8.84863 20.9404L18.5723 26.5542L15.206 28.4979C15.1894 28.5089 15.1703 28.5155 15.1505 28.5173C15.1307 28.5191 15.1107 28.516 15.0924 28.5082L7.04046 23.8557C5.32135 22.8601 4.06716 21.2235 3.55289 19.3046C3.03862 17.3858 3.30624 15.3413 4.29707 13.6194ZM31.955 20.0556L22.2312 14.4411L25.5976 12.4981C25.6142 12.4872 25.6333 12.4805 25.6531 12.4787C25.6729 12.4769 25.6928 12.4801 25.7111 12.4879L33.7631 17.1364C34.9967 17.849 36.0017 18.8982 36.6606 20.1613C37.3194 21.4244 37.6047 22.849 37.4832 24.2684C37.3617 25.6878 36.8382 27.0432 35.9743 28.1759C35.1103 29.3086 33.9415 30.1717 32.6047 30.6641C32.6047 30.5947 32.6047 30.4733 32.6047 30.3889V21.188C32.6066 20.9586 32.5474 20.7328 32.4332 20.5338C32.319 20.3348 32.154 20.1698 31.955 20.0556ZM35.3055 15.0128C35.2464 14.9765 35.1431 14.9142 35.069 14.8717L27.1045 10.2712C26.906 10.1554 26.6803 10.0943 26.4504 10.0943C26.2206 10.0943 25.9948 10.1554 25.7963 10.2712L16.0726 15.8858V11.9982C16.0715 11.9783 16.0753 11.9585 16.0837 11.9405C16.0921 11.9225 16.1048 11.9068 16.1207 11.8949L24.1719 7.25025C25.4053 6.53903 26.8158 6.19376 28.2383 6.25482C29.6608 6.31589 31.0364 6.78077 32.2044 7.59508C33.3723 8.40939 34.2842 9.53945 34.8334 10.8531C35.3826 12.1667 35.5464 13.6095 35.3055 15.0128ZM14.2424 21.9419L10.8752 19.9981C10.8576 19.9893 10.8423 19.9763 10.8309 19.9602C10.8195 19.9441 10.8122 19.9254 10.8098 19.9058V10.6071C10.8107 9.18295 11.2173 7.78848 11.9819 6.58696C12.7466 5.38544 13.8377 4.42659 15.1275 3.82264C16.4173 3.21869 17.8524 2.99464 19.2649 3.1767C20.6775 3.35876 22.0089 3.93941 23.1034 4.85067C23.0427 4.88379 22.937 4.94215 22.8668 4.98473L14.9024 9.58517C14.7025 9.69878 14.5366 9.86356 14.4215 10.0626C14.3065 10.2616 14.2466 10.4877 14.2479 10.7175L14.2424 21.9419ZM16.071 17.9991L20.4018 15.4978L24.7325 17.9975V22.9985L20.4018 25.4983L16.071 22.9985V17.9991Z" fill="currentColor"></path></svg></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)] agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="assistant" data-message-id="f21d6bce-5bbb-49d3-84f2-c1b1a6239c35" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Thank you for the clarification. Lumino, formerly known as PhosphorJS, is a JavaScript library for building web applications, particularly focused on creating interactive and data-driven user interfaces. It's designed for developing desktop-like applications in the web browser.</p><p>Here's a general overview of how to get started with Lumino:</p><ol><li><p><strong>Installation</strong>:</p><p>To start using Lumino, you'll need to install it via a package manager like npm (Node Package Manager). Open your terminal and run:</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>scss</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-scss">npm install <span class="hljs-attr">--save</span> <span class="hljs-keyword">@lumino</span>/core <span class="hljs-keyword">@lumino</span>/widgets
+</code></div></div></pre><p>This will install the core components of Lumino.</p></li><li><p><strong>Creating an Application</strong>:</p><p>Lumino provides a framework for building applications using widgets. You typically start by creating a main application object and adding widgets to it. For example:</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Application</span>, <span class="hljs-title class_">Widget</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lumino/widgets'</span>;
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Application</span>();
+
+<span class="hljs-comment">// Create a main application shell</span>
+<span class="hljs-keyword">const</span> mainWidget = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Widget</span>();
+mainWidget.<span class="hljs-property">node</span>.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Hello, Lumino!'</span>;
+app.<span class="hljs-property">shell</span>.<span class="hljs-title function_">add</span>(mainWidget, <span class="hljs-string">'main'</span>);
+mainWidget.<span class="hljs-property">title</span>.<span class="hljs-property">label</span> = <span class="hljs-string">'My Lumino App'</span>;
+
+<span class="hljs-comment">// Start the application</span>
+app.<span class="hljs-title function_">start</span>();
+</code></div></div></pre></li><li><p><strong>Creating Widgets</strong>:</p><p>Lumino widgets are the building blocks of your application. You can create custom widgets and add them to your application.</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">const</span> customWidget = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Widget</span>();
+customWidget.<span class="hljs-property">node</span>.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Custom Widget'</span>;
+app.<span class="hljs-property">shell</span>.<span class="hljs-title function_">add</span>(customWidget, <span class="hljs-string">'main'</span>);
+</code></div></div></pre></li><li><p><strong>Layouts</strong>:</p><p>You can use layouts to organize the placement of widgets within the application shell. Lumino provides various layout options like <code>BoxLayout</code>, <code>Grid</code>, and <code>TabPanelLayout</code> to control the arrangement of widgets.</p></li><li><p><strong>Interactivity and Events</strong>:</p><p>Lumino allows you to handle events and user interactions. You can add event listeners to widgets and respond to user actions, like button clicks or mouse events.</p></li><li><p><strong>Styling</strong>:</p><p>You can apply custom styles to your Lumino widgets and UI elements using CSS.</p></li><li><p><strong>Packaging and Deployment</strong>:</p><p>When you've built your Lumino application, you can bundle and deploy it using tools like Webpack or any other build tool of your choice.</p></li></ol><p>Remember that Lumino provides a robust set of tools for building web applications, and there are many features and concepts to explore in its documentation. Make sure to refer to the official Lumino documentation and example projects to get a more in-depth understanding of how to use this library effectively: <a href="https://github.com/jupyterlab/lumino" target="_new">Lumino Documentation</a>.</p><p>Additionally, you may want to look at tutorials and examples specific to Lumino or PhosphorJS to see practical applications and use cases for this library.</p></div></div></div><div class="flex justify-between empty:hidden gizmo:justify-start gizmo:gap-3 lg:block gizmo:lg:flex"><div class="text-gray-400 flex self-end lg:self-center justify-center gizmo:lg:justify-start mt-2 gizmo:mt-0 visible lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 gap-2 md:gap-3"></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 gizmo:bg-transparent dark:bg-gray-800 gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-6"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div class="relative flex"><img alt="user avatar" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" class="rounded-sm"></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)]"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="user" data-message-id="aaa2df12-b1a6-4d47-ae8d-02a5be1578b2" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="">Tell me more about Application</div></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 bg-gray-50 gizmo:bg-transparent dark:bg-[#444654] gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-7"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div style="background-color: rgb(25, 195, 125); width: 36px; height: 36px;" class="relative p-1 rounded-sm h-9 w-9 text-white flex items-center justify-center"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md" role="img"><text x="-9999" y="-9999">ChatGPT</text><path d="M37.5324 16.8707C37.9808 15.5241 38.1363 14.0974 37.9886 12.6859C37.8409 11.2744 37.3934 9.91076 36.676 8.68622C35.6126 6.83404 33.9882 5.3676 32.0373 4.4985C30.0864 3.62941 27.9098 3.40259 25.8215 3.85078C24.8796 2.7893 23.7219 1.94125 22.4257 1.36341C21.1295 0.785575 19.7249 0.491269 18.3058 0.500197C16.1708 0.495044 14.0893 1.16803 12.3614 2.42214C10.6335 3.67624 9.34853 5.44666 8.6917 7.47815C7.30085 7.76286 5.98686 8.3414 4.8377 9.17505C3.68854 10.0087 2.73073 11.0782 2.02839 12.312C0.956464 14.1591 0.498905 16.2988 0.721698 18.4228C0.944492 20.5467 1.83612 22.5449 3.268 24.1293C2.81966 25.4759 2.66413 26.9026 2.81182 28.3141C2.95951 29.7256 3.40701 31.0892 4.12437 32.3138C5.18791 34.1659 6.8123 35.6322 8.76321 36.5013C10.7141 37.3704 12.8907 37.5973 14.9789 37.1492C15.9208 38.2107 17.0786 39.0587 18.3747 39.6366C19.6709 40.2144 21.0755 40.5087 22.4946 40.4998C24.6307 40.5054 26.7133 39.8321 28.4418 38.5772C30.1704 37.3223 31.4556 35.5506 32.1119 33.5179C33.5027 33.2332 34.8167 32.6547 35.9659 31.821C37.115 30.9874 38.0728 29.9178 38.7752 28.684C39.8458 26.8371 40.3023 24.6979 40.0789 22.5748C39.8556 20.4517 38.9639 18.4544 37.5324 16.8707ZM22.4978 37.8849C20.7443 37.8874 19.0459 37.2733 17.6994 36.1501C17.7601 36.117 17.8666 36.0586 17.936 36.0161L25.9004 31.4156C26.1003 31.3019 26.2663 31.137 26.3813 30.9378C26.4964 30.7386 26.5563 30.5124 26.5549 30.2825V19.0542L29.9213 20.998C29.9389 21.0068 29.9541 21.0198 29.9656 21.0359C29.977 21.052 29.9842 21.0707 29.9867 21.0902V30.3889C29.9842 32.375 29.1946 34.2791 27.7909 35.6841C26.3872 37.0892 24.4838 37.8806 22.4978 37.8849ZM6.39227 31.0064C5.51397 29.4888 5.19742 27.7107 5.49804 25.9832C5.55718 26.0187 5.66048 26.0818 5.73461 26.1244L13.699 30.7248C13.8975 30.8408 14.1233 30.902 14.3532 30.902C14.583 30.902 14.8088 30.8408 15.0073 30.7248L24.731 25.1103V28.9979C24.7321 29.0177 24.7283 29.0376 24.7199 29.0556C24.7115 29.0736 24.6988 29.0893 24.6829 29.1012L16.6317 33.7497C14.9096 34.7416 12.8643 35.0097 10.9447 34.4954C9.02506 33.9811 7.38785 32.7263 6.39227 31.0064ZM4.29707 13.6194C5.17156 12.0998 6.55279 10.9364 8.19885 10.3327C8.19885 10.4013 8.19491 10.5228 8.19491 10.6071V19.808C8.19351 20.0378 8.25334 20.2638 8.36823 20.4629C8.48312 20.6619 8.64893 20.8267 8.84863 20.9404L18.5723 26.5542L15.206 28.4979C15.1894 28.5089 15.1703 28.5155 15.1505 28.5173C15.1307 28.5191 15.1107 28.516 15.0924 28.5082L7.04046 23.8557C5.32135 22.8601 4.06716 21.2235 3.55289 19.3046C3.03862 17.3858 3.30624 15.3413 4.29707 13.6194ZM31.955 20.0556L22.2312 14.4411L25.5976 12.4981C25.6142 12.4872 25.6333 12.4805 25.6531 12.4787C25.6729 12.4769 25.6928 12.4801 25.7111 12.4879L33.7631 17.1364C34.9967 17.849 36.0017 18.8982 36.6606 20.1613C37.3194 21.4244 37.6047 22.849 37.4832 24.2684C37.3617 25.6878 36.8382 27.0432 35.9743 28.1759C35.1103 29.3086 33.9415 30.1717 32.6047 30.6641C32.6047 30.5947 32.6047 30.4733 32.6047 30.3889V21.188C32.6066 20.9586 32.5474 20.7328 32.4332 20.5338C32.319 20.3348 32.154 20.1698 31.955 20.0556ZM35.3055 15.0128C35.2464 14.9765 35.1431 14.9142 35.069 14.8717L27.1045 10.2712C26.906 10.1554 26.6803 10.0943 26.4504 10.0943C26.2206 10.0943 25.9948 10.1554 25.7963 10.2712L16.0726 15.8858V11.9982C16.0715 11.9783 16.0753 11.9585 16.0837 11.9405C16.0921 11.9225 16.1048 11.9068 16.1207 11.8949L24.1719 7.25025C25.4053 6.53903 26.8158 6.19376 28.2383 6.25482C29.6608 6.31589 31.0364 6.78077 32.2044 7.59508C33.3723 8.40939 34.2842 9.53945 34.8334 10.8531C35.3826 12.1667 35.5464 13.6095 35.3055 15.0128ZM14.2424 21.9419L10.8752 19.9981C10.8576 19.9893 10.8423 19.9763 10.8309 19.9602C10.8195 19.9441 10.8122 19.9254 10.8098 19.9058V10.6071C10.8107 9.18295 11.2173 7.78848 11.9819 6.58696C12.7466 5.38544 13.8377 4.42659 15.1275 3.82264C16.4173 3.21869 17.8524 2.99464 19.2649 3.1767C20.6775 3.35876 22.0089 3.93941 23.1034 4.85067C23.0427 4.88379 22.937 4.94215 22.8668 4.98473L14.9024 9.58517C14.7025 9.69878 14.5366 9.86356 14.4215 10.0626C14.3065 10.2616 14.2466 10.4877 14.2479 10.7175L14.2424 21.9419ZM16.071 17.9991L20.4018 15.4978L24.7325 17.9975V22.9985L20.4018 25.4983L16.071 22.9985V17.9991Z" fill="currentColor"></path></svg></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)] agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="assistant" data-message-id="0d84ee74-969b-41f3-9172-4ff4b79229f9" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>In Lumino, the <code>Application</code> class is a fundamental component that provides the infrastructure for creating and managing the application's user interface. It acts as the main entry point for your web application, allowing you to organize and manage widgets, set up the application shell, and control the application's lifecycle.</p><p>Here are some key aspects of the <code>Application</code> class:</p><ol><li><p><strong>Initialization</strong>:</p><p>To create an instance of the <code>Application</code> class, you simply import it and create an instance:</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Application</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lumino/widgets'</span>;
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Application</span>();
+</code></div></div></pre></li><li><p><strong>Main Shell</strong>:</p><p>The <code>Application</code> typically includes a main shell, which serves as the central container for organizing and displaying widgets. You can access the application's shell using <code>app.shell</code>. Widgets are added to the shell and arranged within it.</p></li><li><p><strong>Widget Management</strong>:</p><p>You can add, remove, and manage widgets within the application. For example, you can create instances of Lumino's <code>Widget</code> class and add them to the shell:</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Widget</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lumino/widgets'</span>;
+
+<span class="hljs-keyword">const</span> mainWidget = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Widget</span>();
+mainWidget.<span class="hljs-property">node</span>.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Hello, Lumino!'</span>;
+app.<span class="hljs-property">shell</span>.<span class="hljs-title function_">add</span>(mainWidget, <span class="hljs-string">'main'</span>);
+</code></div></div></pre><p>The second argument in <code>app.shell.add(widget, 'main')</code> specifies the area in which the widget should be placed within the shell. You can define your own custom areas to organize widgets as needed.</p></li><li><p><strong>Application Lifecycle</strong>:</p><p>The <code>Application</code> class provides methods to start and stop the application. You typically start the application using <code>app.start()</code> and stop it when necessary. Starting the application initializes its components and makes it responsive to user interactions.</p></li><li><p><strong>Events and Signals</strong>:</p><p>Lumino applications and widgets can emit and handle events using the <code>Signal</code> mechanism. This allows you to respond to user interactions, changes in the application's state, or any custom events you define.</p></li><li><p><strong>Layouts</strong>:</p><p>You can define layout structures to organize the widgets within the application's shell. Lumino provides various layout classes like <code>BoxLayout</code>, <code>Grid</code>, and <code>TabPanelLayout</code> to control the placement of widgets.</p></li><li><p><strong>Extensions and Plugins</strong>:</p><p>Lumino supports extending the application with additional functionality through plugins and extensions. You can add custom extensions to your application to enhance its capabilities.</p></li><li><p><strong>Customization</strong>:</p><p>You can customize the appearance and behavior of the <code>Application</code> and its widgets using CSS for styling and JavaScript for adding interactivity.</p></li><li><p><strong>Documentation</strong>:</p><p>To explore the full set of methods, properties, and features of the <code>Application</code> class, refer to the official Lumino documentation, which provides detailed information and examples: <a href="https://github.com/jupyterlab/lumino/blob/master/packages/application/README.md" target="_new">Lumino Documentation - Application</a>.</p></li></ol><p>The <code>Application</code> class is a crucial component for building web applications using Lumino. It helps you structure and manage your UI, control the application's lifecycle, and handle user interactions efficiently.</p></div></div></div><div class="flex justify-between empty:hidden gizmo:justify-start gizmo:gap-3 lg:block gizmo:lg:flex"><div class="text-gray-400 flex self-end lg:self-center justify-center gizmo:lg:justify-start mt-2 gizmo:mt-0 visible lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 gap-2 md:gap-3"></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 gizmo:bg-transparent dark:bg-gray-800 gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-8"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div class="relative flex"><img alt="user avatar" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" class="rounded-sm"></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)]"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="user" data-message-id="aaa2e59a-b3f0-4254-81b2-9987b469cc7f" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="">Tell me more about events and signals</div></div></div></div></div></div></div></div><div class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 bg-gray-50 gizmo:bg-transparent dark:bg-[#444654] gizmo:dark:bg-transparent" style="--avatar-color: #19c37d;" data-testid="conversation-turn-9"><div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto"><div class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }"><div class="flex-shrink-0 flex flex-col relative items-end"><div><div style="background-color: rgb(25, 195, 125); width: 36px; height: 36px;" class="relative p-1 rounded-sm h-9 w-9 text-white flex items-center justify-center"><svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md" role="img"><text x="-9999" y="-9999">ChatGPT</text><path d="M37.5324 16.8707C37.9808 15.5241 38.1363 14.0974 37.9886 12.6859C37.8409 11.2744 37.3934 9.91076 36.676 8.68622C35.6126 6.83404 33.9882 5.3676 32.0373 4.4985C30.0864 3.62941 27.9098 3.40259 25.8215 3.85078C24.8796 2.7893 23.7219 1.94125 22.4257 1.36341C21.1295 0.785575 19.7249 0.491269 18.3058 0.500197C16.1708 0.495044 14.0893 1.16803 12.3614 2.42214C10.6335 3.67624 9.34853 5.44666 8.6917 7.47815C7.30085 7.76286 5.98686 8.3414 4.8377 9.17505C3.68854 10.0087 2.73073 11.0782 2.02839 12.312C0.956464 14.1591 0.498905 16.2988 0.721698 18.4228C0.944492 20.5467 1.83612 22.5449 3.268 24.1293C2.81966 25.4759 2.66413 26.9026 2.81182 28.3141C2.95951 29.7256 3.40701 31.0892 4.12437 32.3138C5.18791 34.1659 6.8123 35.6322 8.76321 36.5013C10.7141 37.3704 12.8907 37.5973 14.9789 37.1492C15.9208 38.2107 17.0786 39.0587 18.3747 39.6366C19.6709 40.2144 21.0755 40.5087 22.4946 40.4998C24.6307 40.5054 26.7133 39.8321 28.4418 38.5772C30.1704 37.3223 31.4556 35.5506 32.1119 33.5179C33.5027 33.2332 34.8167 32.6547 35.9659 31.821C37.115 30.9874 38.0728 29.9178 38.7752 28.684C39.8458 26.8371 40.3023 24.6979 40.0789 22.5748C39.8556 20.4517 38.9639 18.4544 37.5324 16.8707ZM22.4978 37.8849C20.7443 37.8874 19.0459 37.2733 17.6994 36.1501C17.7601 36.117 17.8666 36.0586 17.936 36.0161L25.9004 31.4156C26.1003 31.3019 26.2663 31.137 26.3813 30.9378C26.4964 30.7386 26.5563 30.5124 26.5549 30.2825V19.0542L29.9213 20.998C29.9389 21.0068 29.9541 21.0198 29.9656 21.0359C29.977 21.052 29.9842 21.0707 29.9867 21.0902V30.3889C29.9842 32.375 29.1946 34.2791 27.7909 35.6841C26.3872 37.0892 24.4838 37.8806 22.4978 37.8849ZM6.39227 31.0064C5.51397 29.4888 5.19742 27.7107 5.49804 25.9832C5.55718 26.0187 5.66048 26.0818 5.73461 26.1244L13.699 30.7248C13.8975 30.8408 14.1233 30.902 14.3532 30.902C14.583 30.902 14.8088 30.8408 15.0073 30.7248L24.731 25.1103V28.9979C24.7321 29.0177 24.7283 29.0376 24.7199 29.0556C24.7115 29.0736 24.6988 29.0893 24.6829 29.1012L16.6317 33.7497C14.9096 34.7416 12.8643 35.0097 10.9447 34.4954C9.02506 33.9811 7.38785 32.7263 6.39227 31.0064ZM4.29707 13.6194C5.17156 12.0998 6.55279 10.9364 8.19885 10.3327C8.19885 10.4013 8.19491 10.5228 8.19491 10.6071V19.808C8.19351 20.0378 8.25334 20.2638 8.36823 20.4629C8.48312 20.6619 8.64893 20.8267 8.84863 20.9404L18.5723 26.5542L15.206 28.4979C15.1894 28.5089 15.1703 28.5155 15.1505 28.5173C15.1307 28.5191 15.1107 28.516 15.0924 28.5082L7.04046 23.8557C5.32135 22.8601 4.06716 21.2235 3.55289 19.3046C3.03862 17.3858 3.30624 15.3413 4.29707 13.6194ZM31.955 20.0556L22.2312 14.4411L25.5976 12.4981C25.6142 12.4872 25.6333 12.4805 25.6531 12.4787C25.6729 12.4769 25.6928 12.4801 25.7111 12.4879L33.7631 17.1364C34.9967 17.849 36.0017 18.8982 36.6606 20.1613C37.3194 21.4244 37.6047 22.849 37.4832 24.2684C37.3617 25.6878 36.8382 27.0432 35.9743 28.1759C35.1103 29.3086 33.9415 30.1717 32.6047 30.6641C32.6047 30.5947 32.6047 30.4733 32.6047 30.3889V21.188C32.6066 20.9586 32.5474 20.7328 32.4332 20.5338C32.319 20.3348 32.154 20.1698 31.955 20.0556ZM35.3055 15.0128C35.2464 14.9765 35.1431 14.9142 35.069 14.8717L27.1045 10.2712C26.906 10.1554 26.6803 10.0943 26.4504 10.0943C26.2206 10.0943 25.9948 10.1554 25.7963 10.2712L16.0726 15.8858V11.9982C16.0715 11.9783 16.0753 11.9585 16.0837 11.9405C16.0921 11.9225 16.1048 11.9068 16.1207 11.8949L24.1719 7.25025C25.4053 6.53903 26.8158 6.19376 28.2383 6.25482C29.6608 6.31589 31.0364 6.78077 32.2044 7.59508C33.3723 8.40939 34.2842 9.53945 34.8334 10.8531C35.3826 12.1667 35.5464 13.6095 35.3055 15.0128ZM14.2424 21.9419L10.8752 19.9981C10.8576 19.9893 10.8423 19.9763 10.8309 19.9602C10.8195 19.9441 10.8122 19.9254 10.8098 19.9058V10.6071C10.8107 9.18295 11.2173 7.78848 11.9819 6.58696C12.7466 5.38544 13.8377 4.42659 15.1275 3.82264C16.4173 3.21869 17.8524 2.99464 19.2649 3.1767C20.6775 3.35876 22.0089 3.93941 23.1034 4.85067C23.0427 4.88379 22.937 4.94215 22.8668 4.98473L14.9024 9.58517C14.7025 9.69878 14.5366 9.86356 14.4215 10.0626C14.3065 10.2616 14.2466 10.4877 14.2479 10.7175L14.2424 21.9419ZM16.071 17.9991L20.4018 15.4978L24.7325 17.9975V22.9985L20.4018 25.4983L16.071 22.9985V17.9991Z" fill="currentColor"></path></svg></div></div></div><div class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)] agent-turn"><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full gap-3 gizmo:gap-0"><div data-message-author-role="assistant" data-message-id="980ef517-fb45-4f50-8c60-ad63e451ebcb" class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"><div class="markdown prose w-full break-words dark:prose-invert light"><p>Events and signals are fundamental mechanisms in the Lumino library (formerly known as PhosphorJS) for handling interactions, communication, and synchronization between various components, such as widgets, within your application. They allow you to create responsive and interactive web applications. Here's a more detailed look at events and signals in Lumino:</p><ol><li><p><strong>Events</strong>:</p><p>In the context of Lumino, an event is a notification that something has happened or changed. These events can include user interactions like mouse clicks, keyboard inputs, or any custom events you define in your application. Events are typically associated with DOM elements and other JavaScript objects.</p><p>Lumino allows you to attach event listeners to widgets or other elements, which respond to specific events. For example, you can listen for a click event on a button widget to trigger an action when the button is clicked.</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'#myButton'</span>);
+
+button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+    <span class="hljs-comment">// Handle the click event</span>
+});
+</code></div></div></pre><p>Lumino provides its event system for managing events within the framework.</p></li><li><p><strong>Signals</strong>:</p><p>Lumino uses the concept of signals as a way to create and manage event-like behavior within its framework. Signals are a form of observer pattern that allows objects to emit signals when they change or perform certain actions. Other objects (observers) can then connect to these signals to be notified when the signal is emitted.</p><p>In Lumino, widgets and other objects often have signals that you can connect to in order to respond to changes or interactions. For example, a widget may have a <code>clicked</code> signal that you can connect to in order to respond to a click event on that widget.</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Widget</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lumino/widgets'</span>;
+
+<span class="hljs-keyword">const</span> myWidget = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Widget</span>();
+myWidget.<span class="hljs-property">clicked</span>.<span class="hljs-title function_">connect</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-comment">// Handle the widget's click event</span>
+});
+</code></div></div></pre><p>Signals in Lumino are powerful because they allow you to create highly modular and extensible applications. You can connect multiple functions or methods to a single signal, and when the signal is emitted, all connected functions will be invoked.</p></li><li><p><strong>Custom Signals</strong>:</p><p>You can also define custom signals for your own classes or objects in Lumino. This is useful for creating a clean and organized way to handle custom events or state changes within your application.</p><pre><div class="bg-black rounded-md"><div class="flex items-center relative text-gray-200 bg-gray-800 gizmo:dark:bg-token-surface-primary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Signal</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lumino/signaling'</span>;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">MyObject</span> {
+    <span class="hljs-title function_">constructor</span>() {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">mySignal</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Signal</span>(<span class="hljs-variable language_">this</span>);
+    }
+
+    <span class="hljs-title function_">triggerCustomEvent</span>() {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">mySignal</span>.<span class="hljs-title function_">emit</span>(<span class="hljs-string">'CustomEvent'</span>);
+    }
+}
+
+<span class="hljs-keyword">const</span> myInstance = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyObject</span>();
+myInstance.<span class="hljs-property">mySignal</span>.<span class="hljs-title function_">connect</span>(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Custom event:'</span>, data);
+});
+
+myInstance.<span class="hljs-title function_">triggerCustomEvent</span>(); <span class="hljs-comment">// This triggers the custom event and logs the message</span>
+</code></div></div></pre><p>Here, <code>mySignal</code> is a custom signal that can be connected to and emitted by <code>MyObject</code>.</p></li></ol><p>Events and signals are essential for building interactive and responsive web applications in Lumino. They provide a structured and efficient way to handle user interactions, state changes, and custom events within your application, making it more dynamic and user-friendly.</p></div></div></div><div class="flex justify-between empty:hidden gizmo:justify-start gizmo:gap-3 lg:block gizmo:lg:flex"><div class="text-gray-400 flex self-end lg:self-center justify-center gizmo:lg:justify-start mt-2 gizmo:mt-0 visible lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 gap-2 md:gap-3"></div></div></div></div></div></div></div>
+<div class="toggle"><input id="toggle" type="checkbox" /><label for="toggle"></label></div>
+<script>
+function decode(array) {
+  const ua = new Uint8Array(array);
+  return URL.createObjectURL(new Blob([ua], {type : "image/jpeg"}));
+}
+const avatar_data = decode([255,216,255,224,0,16,74,70,73,70,0,1,1,0,0,1,0,1,0,0,255,219,0,67,0,2,1,1,1,1,1,2,1,1,1,2,2,2,2,2,4,3,2,2,2,2,5,4,4,3,4,6,5,6,6,6,5,6,6,6,7,9,8,6,7,9,7,6,6,8,11,8,9,10,10,10,10,10,6,8,11,12,11,10,12,9,10,10,10,255,219,0,67,1,2,2,2,2,2,2,5,3,3,5,10,7,6,7,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,255,192,0,17,8,0,96,0,96,3,1,17,0,2,17,1,3,17,1,255,196,0,31,0,0,1,5,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,11,255,196,0,181,16,0,2,1,3,3,2,4,3,5,5,4,4,0,0,1,125,1,2,3,0,4,17,5,18,33,49,65,6,19,81,97,7,34,113,20,50,129,145,161,8,35,66,177,193,21,82,209,240,36,51,98,114,130,9,10,22,23,24,25,26,37,38,39,40,41,42,52,53,54,55,56,57,58,67,68,69,70,71,72,73,74,83,84,85,86,87,88,89,90,99,100,101,102,103,104,105,106,115,116,117,118,119,120,121,122,131,132,133,134,135,136,137,138,146,147,148,149,150,151,152,153,154,162,163,164,165,166,167,168,169,170,178,179,180,181,182,183,184,185,186,194,195,196,197,198,199,200,201,202,210,211,212,213,214,215,216,217,218,225,226,227,228,229,230,231,232,233,234,241,242,243,244,245,246,247,248,249,250,255,196,0,31,1,0,3,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,2,3,4,5,6,7,8,9,10,11,255,196,0,181,17,0,2,1,2,4,4,3,4,7,5,4,4,0,1,2,119,0,1,2,3,17,4,5,33,49,6,18,65,81,7,97,113,19,34,50,129,8,20,66,145,161,177,193,9,35,51,82,240,21,98,114,209,10,22,36,52,225,37,241,23,24,25,26,38,39,40,41,42,53,54,55,56,57,58,67,68,69,70,71,72,73,74,83,84,85,86,87,88,89,90,99,100,101,102,103,104,105,106,115,116,117,118,119,120,121,122,130,131,132,133,134,135,136,137,138,146,147,148,149,150,151,152,153,154,162,163,164,165,166,167,168,169,170,178,179,180,181,182,183,184,185,186,194,195,196,197,198,199,200,201,202,210,211,212,213,214,215,216,217,218,226,227,228,229,230,231,232,233,234,242,243,244,245,246,247,248,249,250,255,218,0,12,3,1,0,2,17,3,17,0,63,0,243,250,254,180,62,28,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,3,175,248,11,240,87,197,95,180,79,197,205,23,224,199,130,111,244,251,93,83,93,154,72,173,39,213,37,116,183,66,145,60,167,123,70,142,192,109,67,209,79,56,250,215,6,103,152,80,202,176,51,197,214,77,198,27,218,215,221,45,46,215,126,230,180,105,74,189,85,8,238,206,211,246,189,253,136,190,43,254,197,154,174,135,164,124,83,215,252,61,127,46,191,111,60,214,109,160,93,207,42,162,196,200,172,31,206,134,44,28,184,198,51,223,165,121,249,15,17,224,120,134,19,158,26,50,74,13,39,204,146,222,251,89,190,198,184,156,37,76,43,74,109,107,216,241,202,247,206,80,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,15,127,255,0,130,91,255,0,201,251,124,58,255,0,176,141,215,254,145,92,87,204,113,159,252,147,24,159,69,255,0,165,35,179,47,255,0,124,135,245,208,250,43,254,11,247,255,0,35,191,195,79,251,5,106,95,250,54,10,249,63,11,255,0,221,177,62,177,252,153,221,156,252,112,249,159,158,213,250,153,226,133,0,20,0,80,1,64,5,0,20,0,80,1,64,5,0,123,255,0,252,18,223,254,79,219,225,215,253,132,110,191,244,138,226,190,99,140,255,0,228,152,196,250,47,253,41,29,153,127,251,228,63,174,135,209,95,240,95,191,249,29,254,26,127,216,43,82,255,0,209,176,87,201,248,95,254,237,137,245,143,228,206,236,231,227,135,204,252,246,175,212,207,20,40,0,160,2,128,10,0,40,0,160,2,128,47,232,94,22,241,63,138,101,146,15,12,248,114,255,0,81,120,148,52,169,97,102,243,20,7,161,33,1,192,172,170,215,163,69,39,82,74,62,173,47,204,106,50,150,200,175,169,233,122,158,139,125,38,151,172,233,211,218,92,194,113,45,189,204,45,28,136,113,156,21,96,8,224,131,248,213,194,112,169,21,40,59,167,213,3,77,59,51,222,63,224,150,255,0,242,126,223,14,191,236,35,117,255,0,164,87,21,243,92,103,255,0,36,198,39,209,127,233,72,235,203,255,0,223,33,253,116,62,138,255,0,130,253,255,0,200,239,240,215,254,193,90,151,254,141,130,190,79,194,255,0,247,108,79,172,127,38,119,103,63,28,62,103,231,181,126,166,120,161,64,5,0,20,0,80,1,64,5,0,20,1,245,247,252,17,131,227,215,134,126,16,126,212,87,62,15,241,150,173,111,99,99,227,77,35,251,62,214,230,229,182,168,190,89,85,224,66,196,225,67,143,49,6,122,187,32,29,121,248,63,16,114,202,216,252,149,85,164,155,116,159,51,75,249,109,103,247,104,253,46,122,89,93,104,210,196,90,93,116,249,158,177,255,0,5,63,255,0,130,102,124,121,248,151,241,234,255,0,227,247,192,95,14,255,0,194,71,109,226,36,128,234,218,84,119,145,69,113,103,113,28,43,22,229,18,50,135,141,150,52,60,18,193,139,113,140,99,196,224,222,48,203,48,121,100,112,88,217,114,56,94,206,205,166,155,191,75,217,171,250,91,204,233,204,48,21,170,86,117,41,171,220,155,254,9,113,255,0,4,206,248,221,240,199,227,133,183,237,3,241,255,0,195,159,240,143,69,225,248,166,26,38,147,45,220,114,92,93,92,75,19,68,101,113,27,48,72,213,36,126,9,12,91,28,96,100,207,25,241,134,93,140,203,94,7,5,46,119,59,115,59,52,146,78,246,214,215,109,165,229,97,229,248,10,180,235,123,74,138,214,216,241,223,248,44,175,237,13,225,191,141,95,180,229,183,132,124,21,170,193,125,166,120,43,76,58,124,183,86,231,114,189,243,200,94,224,43,3,134,11,136,211,142,140,143,214,189,255,0,15,242,170,217,118,76,234,213,86,149,87,205,111,238,218,203,239,213,250,52,114,230,149,227,87,17,104,236,180,249,159,34,215,221,30,104,80,1,64,5,0,20,0,80,1,64,5,0,20,1,244,127,194,15,248,42,231,237,171,240,123,70,139,195,182,127,18,33,215,172,45,225,88,237,109,252,79,96,183,77,10,142,152,148,21,149,184,227,230,118,24,3,24,175,146,199,240,71,15,99,234,58,142,151,36,158,238,46,215,249,106,190,228,119,82,204,113,84,149,175,127,81,191,25,191,224,170,223,182,135,198,173,14,95,12,106,95,17,96,208,180,235,152,154,59,187,95,12,216,139,83,58,158,161,165,37,165,3,28,97,92,2,9,200,52,242,254,9,225,236,186,170,169,26,124,242,91,57,59,219,229,162,251,208,85,204,113,85,85,155,178,242,62,114,175,172,56,66,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,2,128,10,0,40,0,160,15,255,217]);
+const content_images = [].map(decode);
+document.querySelectorAll('img').forEach(img => {
+   if (img.matches('.empty\\:hidden > img')) {
+     const uri = content_images.shift();
+     img.src = uri;
+   } else {
+     img.src = avatar_data;
+   }
+});
+toggle.addEventListener('change', () => {
+    const className = toggle.checked ? 'dark' : 'light';
+    document.documentElement.className = className;
+});
+</script></body></html>
